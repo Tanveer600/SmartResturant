@@ -1,0 +1,16 @@
+{
+  "name": "restaurant-smart",
+  "private": true,
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n api,web \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w server && npm run build -w client",
+    "seed": "npm run seed -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
